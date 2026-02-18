@@ -1,9 +1,9 @@
 /*
-Name: Trevor Romano
-Course: CIS150
-Lab: Lab 05
-Description: Calculates and displays average smoothie receipt amount using a for loop.
-Date: 2026-02-17
+Name: Trevor Romano.
+Course: CIS150.
+Lab: Lab 05.
+Description: Calculates average smoothie receipt amount.
+Date: 2026-02-18.
 */
 
 #include <iostream>
@@ -15,36 +15,52 @@ double calculateAverage(double totalAmount, int receiptCount);
 
 int main()
 {
-    // Store receipt details and summary totals.
+    // store receipt input and summary values
     int receiptCount = 0;
     double receiptAmount = 0.0;
     double totalAmount = 0.0;
     double averageAmount = 0.0;
 
-    cout << "Enter number of receipts: ";
+    cout << "enter number of receipts" << endl;
     cin >> receiptCount;
+
+    if (receiptCount < 0)
+    {
+        cout << "receipt count cannot be negative" << endl;
+        return 0;
+    }
 
     for (int receiptNumber = 1; receiptNumber <= receiptCount; receiptNumber += 1)
     {
-        // Read each receipt and add it to the running total.
-        cout << "Enter amount for receipt #" << receiptNumber << ": $";
-        cin >> receiptAmount;
+        // ask for one valid receipt amount
+        do
+        {
+            cout << "enter amount for receipt " << receiptNumber << endl;
+            cin >> receiptAmount;
+
+            if (receiptAmount < 0.0)
+            {
+                cout << "receipt amount cannot be negative" << endl;
+            }
+
+        } while (receiptAmount < 0.0);
+
         totalAmount += receiptAmount;
     }
 
     averageAmount = calculateAverage(totalAmount, receiptCount);
 
     cout << fixed << setprecision(2);
-    cout << "Number of receipts: " << receiptCount << endl;
-    cout << "Total: $" << totalAmount << endl;
-    cout << "Average: $" << averageAmount << endl;
+    cout << "number of receipts " << receiptCount << endl;
+    cout << "total " << totalAmount << endl;
+    cout << "average " << averageAmount << endl;
 
     return 0;
 }
 
 double calculateAverage(double totalAmount, int receiptCount)
 {
-    // Avoid division by zero when no receipts are entered.
+    // avoid divide by zero
     if (receiptCount == 0)
     {
         return 0.0;

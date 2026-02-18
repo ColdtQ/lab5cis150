@@ -1,9 +1,9 @@
 /*
-Name: Trevor Romano
-Course: CIS150
-Lab: Lab 05
-Description: Menu-driven smoothie customization using do-while loops and a switch statement.
-Date: 2026-02-17
+Name: Trevor Romano.
+Course: CIS150.
+Lab: Lab 05.
+Description: Processes smoothie menu choices with do-while and switch.
+Date: 2026-02-18.
 */
 
 #include <iostream>
@@ -15,39 +15,39 @@ void displayMenu(int &selection);
 
 int main()
 {
-    // Start with a default smoothie selection.
-    string flavor = "YourFavorite";
-    string size = "Small";
+    // set starting smoothie values
+    string flavor = "strawberry";
+    string size = "small";
     bool addSprinkle = false;
     int selection = 0;
 
     do
     {
-        // Show current order details before each menu choice.
-        cout << "Current Selection: " << size << " " << flavor << " ";
+        // show current smoothie before menu
+        cout << "current selection " << size << " " << flavor << " ";
         if (addSprinkle)
         {
-            cout << "With Sprinkles" << endl;
+            cout << "with sprinkles" << endl;
         }
         else
         {
-            cout << "Without Sprinkles" << endl;
+            cout << "without sprinkles" << endl;
         }
 
         displayMenu(selection);
 
+        // update order from selected option
         switch (selection)
         {
-            // Apply the user's selected customization option.
             case 1:
-                cout << "Enter new flavor: ";
+                cout << "enter new flavor" << endl;
                 cin >> flavor;
                 break;
             case 2:
-                size = "Small";
+                size = "small";
                 break;
             case 3:
-                size = "Large";
+                size = "large";
                 break;
             case 4:
                 addSprinkle = true;
@@ -60,14 +60,14 @@ int main()
 
     } while (selection != 5);
 
-    cout << "Thank you for your order of: " << size << " " << flavor << " ";
+    cout << "thank you for your order of " << size << " " << flavor << " ";
     if (addSprinkle)
     {
-        cout << "With Sprinkles" << endl;
+        cout << "with sprinkles" << endl;
     }
     else
     {
-        cout << "Without Sprinkles" << endl;
+        cout << "without sprinkles" << endl;
     }
 
     return 0;
@@ -77,27 +77,20 @@ void displayMenu(int &selection)
 {
     do
     {
-        // Show current order details before each menu choice.
-        cout << "Smoothie Options" << endl;
-        cout << "1. Change the flavor" << endl;
-        cout << "2. Change size to small" << endl;
-        cout << "3. Change size to large" << endl;
-        cout << "4. Add Sprinkles" << endl;
-        cout << "5. Exit" << endl;
-        cout << "Please Enter your Choice (1-5): ";
+        // print menu and ask for a valid choice
+        cout << "Smoothie Options:" << endl;
+        cout << "1: Change the flavor." << endl;
+        cout << "2: Change size to small." << endl;
+        cout << "3: Change size to large." << endl;
+        cout << "4: Add sprinkles." << endl;
+        cout << "5: Exit." << endl;
+        cout << "Please enter your choice (1-5):" << endl;
 
         cin >> selection;
 
-        if (!cin)
+        if (selection < 1 || selection > 5)
         {
-            // Recover from non-numeric input and ask again.
-            cin.clear();
-            char clearChar = '\0';
-            do
-            {
-                cin.get(clearChar);
-            } while (clearChar != '\n' && cin);
-            selection = 0;
+            cout << "please enter a number from 1 to 5" << endl;
         }
 
     } while (selection < 1 || selection > 5);
