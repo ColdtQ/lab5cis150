@@ -1,9 +1,9 @@
 /*
-Name: Trevor Romano
-Course: CIS150
-Lab: Lab 05
-Description: Counts smoothie sales using sentinel-controlled input and prints a sales message.
-Date: 2026-02-18
+Name: Trevor Romano.
+Course: CIS150.
+Lab: Lab 05.
+Description: Totals smoothie sales and prints one sales message.
+Date: 2026-02-18.
 */
 
 #include <iostream>
@@ -14,22 +14,23 @@ void printSalesMessage(int totalSold);
 
 int main()
 {
-    // Keep track of one receipt at a time and our running total.
+    // store each receipt count and the running total
     int receiptSmoothies = 0;
     int totalSold = 0;
 
-    cout << "Enter number of smoothies sold for each receipt (9999 to stop): ";
+    cout << "enter smoothies sold for each receipt 9999 to stop" << endl;
     cin >> receiptSmoothies;
 
     while (receiptSmoothies != 9999)
     {
-        // Add each receipt to today's smoothie count.
+        // add this receipt to the daily total
         totalSold += receiptSmoothies;
-        cout << "Enter number of smoothies sold for each receipt (9999 to stop): ";
+
+        cout << "enter smoothies sold for each receipt 9999 to stop" << endl;
         cin >> receiptSmoothies;
     }
 
-    cout << "Total smoothies sold: " << totalSold << endl;
+    cout << "total smoothies sold " << totalSold << endl;
     printSalesMessage(totalSold);
 
     return 0;
@@ -37,17 +38,17 @@ int main()
 
 void printSalesMessage(int totalSold)
 {
-    // Pick a message based on how strong sales were.
+    // choose one message based on total sales
     if (totalSold > 250)
     {
-        cout << "Another record setting sales day!" << endl;
+        cout << "another record setting sales day" << endl;
     }
     else if (totalSold >= 100)
     {
-        cout << "The advertising is really starting to help" << endl;
+        cout << "the advertising is really starting to help" << endl;
     }
     else
     {
-        cout << "Maybe we need add some different flavors." << endl;
+        cout << "maybe we need add some different flavors" << endl;
     }
 }
