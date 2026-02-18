@@ -3,7 +3,7 @@ Name: Trevor Romano.
 Course: CIS150.
 Lab: Lab 05.
 Description: Prints a custom box using two helper functions.
-Date: 2026-02-18.
+Date: 2026-02-17.
 */
 
 #include <iostream>
