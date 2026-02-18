@@ -1,5 +1,5 @@
 /*
-Name: Your Name
+Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Counts smoothie sales using sentinel-controlled input and prints a sales message.
@@ -14,6 +14,7 @@ void printSalesMessage(int totalSold);
 
 int main()
 {
+    // Keep track of one receipt at a time and our running total.
     int receiptSmoothies = 0;
     int totalSold = 0;
 
@@ -22,6 +23,7 @@ int main()
 
     while (receiptSmoothies != 9999)
     {
+        // Add each receipt to today's smoothie count.
         totalSold += receiptSmoothies;
         cout << "Enter number of smoothies sold for each receipt (9999 to stop): ";
         cin >> receiptSmoothies;
@@ -35,6 +37,7 @@ int main()
 
 void printSalesMessage(int totalSold)
 {
+    // Pick a message based on how strong sales were.
     if (totalSold > 250)
     {
         cout << "Another record setting sales day!" << endl;

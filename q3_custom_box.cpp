@@ -1,5 +1,5 @@
 /*
-Name: Your Name
+Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Prints a custom box using separate functions for border and middle sections.
@@ -15,6 +15,7 @@ void printMiddleSection(char sideChar, int width, int height);
 
 int main()
 {
+    // Gather box settings from the user.
     char borderChar = 'X';
     char sideChar = '!';
     int boxWidth = 0;
@@ -34,6 +35,7 @@ int main()
 
     if (boxWidth > 0 && boxHeight > 0)
     {
+        // Print top border, middle rows, and bottom border.
         printBorderLine(borderChar, boxWidth);
         printMiddleSection(sideChar, boxWidth, boxHeight);
         if (boxHeight > 1)
@@ -51,6 +53,7 @@ void printBorderLine(char borderChar, int width)
 
     while (currentColumn < width)
     {
+        // Print one border character per column.
         cout << borderChar;
         currentColumn += 1;
     }
@@ -65,6 +68,7 @@ void printMiddleSection(char sideChar, int width, int height)
 
     while (currentRow < middleRowCount)
     {
+        // Start each middle row with the left side character.
         cout << sideChar;
 
         int middleSpaceCount = width - 2;
