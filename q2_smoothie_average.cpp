@@ -1,5 +1,5 @@
 /*
-Name: Your Name
+Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Calculates and displays average smoothie receipt amount using a for loop.
@@ -15,6 +15,7 @@ double calculateAverage(double totalAmount, int receiptCount);
 
 int main()
 {
+    // Store receipt details and summary totals.
     int receiptCount = 0;
     double receiptAmount = 0.0;
     double totalAmount = 0.0;
@@ -25,6 +26,7 @@ int main()
 
     for (int receiptNumber = 1; receiptNumber <= receiptCount; receiptNumber += 1)
     {
+        // Read each receipt and add it to the running total.
         cout << "Enter amount for receipt #" << receiptNumber << ": $";
         cin >> receiptAmount;
         totalAmount += receiptAmount;
@@ -42,6 +44,7 @@ int main()
 
 double calculateAverage(double totalAmount, int receiptCount)
 {
+    // Avoid division by zero when no receipts are entered.
     if (receiptCount == 0)
     {
         return 0.0;

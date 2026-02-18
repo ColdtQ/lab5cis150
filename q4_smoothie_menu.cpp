@@ -1,5 +1,5 @@
 /*
-Name: Your Name
+Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Menu-driven smoothie customization using do-while loops and a switch statement.
@@ -15,6 +15,7 @@ void displayMenu(int &selection);
 
 int main()
 {
+    // Start with a default smoothie selection.
     string flavor = "YourFavorite";
     string size = "Small";
     bool addSprinkle = false;
@@ -22,6 +23,7 @@ int main()
 
     do
     {
+        // Show current order details before each menu choice.
         cout << "Current Selection: " << size << " " << flavor << " ";
         if (addSprinkle)
         {
@@ -36,6 +38,7 @@ int main()
 
         switch (selection)
         {
+            // Apply the user's selected customization option.
             case 1:
                 cout << "Enter new flavor: ";
                 cin >> flavor;
@@ -74,6 +77,7 @@ void displayMenu(int &selection)
 {
     do
     {
+        // Show current order details before each menu choice.
         cout << "Smoothie Options" << endl;
         cout << "1. Change the flavor" << endl;
         cout << "2. Change size to small" << endl;
@@ -86,6 +90,7 @@ void displayMenu(int &selection)
 
         if (!cin)
         {
+            // Recover from non-numeric input and ask again.
             cin.clear();
             char clearChar = '\0';
             do
