@@ -3,7 +3,7 @@ Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Calculates and displays average smoothie receipt amount using a for loop.
-Date: 2026-02-18
+Date: 2026-02-17
 */
 
 #include <iostream>

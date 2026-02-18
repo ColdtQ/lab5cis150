@@ -3,7 +3,7 @@ Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Prints a custom box using separate functions for border and middle sections.
-Date: 2026-02-18
+Date: 2026-02-17
 */
 
 #include <iostream>
@@ -15,7 +15,7 @@ void printMiddleSection(char sideChar, int width, int height);
 
 int main()
 {
-    // Gather box settings from the user.
+    // Gather box settings from the user
     char borderChar = 'X';
     char sideChar = '!';
     int boxWidth = 0;

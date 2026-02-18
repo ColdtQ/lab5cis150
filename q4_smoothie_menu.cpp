@@ -3,7 +3,7 @@ Name: Trevor Romano
 Course: CIS150
 Lab: Lab 05
 Description: Menu-driven smoothie customization using do-while loops and a switch statement.
-Date: 2026-02-18
+Date: 2026-02-17
 */
 
 #include <iostream>
